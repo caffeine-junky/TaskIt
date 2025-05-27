@@ -70,5 +70,5 @@ class TaskService:
         if skip is not None: query = query.offset(skip)
         if limit is not None: query = query.limit(limit)
 
-        tasks: List[Task] = list(session.exec(select(Task)).all())
+        tasks: List[Task] = list(session.exec(query).all())
         return tasks
